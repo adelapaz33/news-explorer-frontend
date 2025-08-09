@@ -1,0 +1,25 @@
+.results {
+  background-color: #f5f6f7;
+  padding: 80px 104px;
+}
+.results__header {
+  font-size: 40px;
+  line-height: 46px;
+  margin: 0;
+  padding-bottom: 64px;
+}
+.results__show-more-btn {
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  width: 288px;
+  height: 64px;
+  border-radius: 80px;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
+}
+
+.results__show-more-btn:hover {
+  background-color: #e8e8e8;
+}

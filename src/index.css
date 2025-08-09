@@ -1,0 +1,43 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/style.css");
+
+body {
+  font-family: "Roboto Slab", "sans-serif";
+  font-weight: 400;
+}
+
+.search__bar-input,
+.main__text,
+.about__text,
+.footer__text,
+.footer__nav,
+.card__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.search__bar-button,
+.results__show-more-btn .modal__submit,
+.modal__register-btn,
+.modal__footer,
+.modal__button-row,
+.results__show-more-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.modal__title {
+  font-family: "Roboto 900", sans-serif;
+  font-weight: 900;
+}
+
+.card__source {
+  font-family: "Roboto Slab 700", sans-serif;
+  font-weight: 700;
+}
+
+.modal__label,
+.card__date {
+  font-family: "Inter Regular", sans-serif;
+  font-weight: 400;
+}

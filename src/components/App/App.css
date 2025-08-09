@@ -1,0 +1,6 @@
+.page__photo-background {
+  background-image: url("../../assets/backgroundPhoto.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

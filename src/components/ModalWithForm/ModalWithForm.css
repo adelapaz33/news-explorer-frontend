@@ -1,0 +1,132 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  border-radius: 8px;
+}
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__content {
+  background-color: white;
+  position: relative;
+  max-width: 430px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 34px 36px 28px 36px;
+  margin: auto;
+  border-radius: 16px;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__title {
+  font-size: 24px;
+  line-height: 100%;
+  padding-bottom: 24px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.modal__close {
+  position: absolute;
+  top: -40px;
+  right: -48px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.modal__close-btn {
+  background-color: transparent;
+}
+.modal__label {
+  font-size: 12px;
+  color: #2f71ef;
+  line-height: 100%;
+  padding-bottom: 24px;
+}
+
+.modal__input {
+  display: block;
+  font-size: 14px;
+  line-height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-top: 8px;
+}
+
+.modal__legend {
+  padding-bottom: 12px;
+}
+.modal__submit {
+  background-color: #2f71e5;
+  color: white;
+  border-radius: 100px;
+  width: 360px;
+  height: 64px;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+}
+.modal__submit:hover {
+  opacity: 0.6;
+}
+
+.modal__log-in-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.modal__register-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #2f71e5;
+  /* margin: 0;
+    padding: 0; */
+}
+.modal__register-btn:hover {
+  opacity: 50%;
+}
+
+.modal__button-row {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  align-items: center;
+}
+.modal__footer {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.modal__error {
+  color: #ff4d00;
+  font-size: 16px;
+  line-height: 20px;
+}

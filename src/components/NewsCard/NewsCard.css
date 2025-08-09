@@ -1,0 +1,78 @@
+.card {
+  height: 576px;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 16px;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+.card__image {
+  width: 100%;
+  height: 272px;
+  object-fit: cover;
+  display: block;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.card__save-button {
+  background-color: white;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  top: 24px;
+  right: 24px;
+  left: auto;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+}
+
+.card__save-icon {
+  opacity: 50%;
+}
+
+.card__save-icon:hover {
+  opacity: 1;
+}
+.card__body {
+  padding: 20px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card__date {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #b6bcbf;
+}
+
+.card__title {
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.card__spacer {
+  flex-grow: 1;
+}
+
+.card__source {
+  color: #b6bcbf;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
