@@ -1,7 +1,14 @@
 import NewsCard from "../NewsCard/NewsCard";
+import "./NewsCardList.css";
 
-function NewsCardList() {
-  return <NewsCard />;
+function NewsCardList({ articles }) {
+  return (
+    <ul className="card-list">
+      {articles.map((article, index) => (
+        <NewsCard key={index} article={article} />
+      ))}
+    </ul>
+  );
 }
 
 export default NewsCardList;

@@ -36,3 +36,36 @@
   height: 24px;
   width: 24px;
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 16px 22px 16px;
+  }
+
+  .footer__text {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer__social {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+  }
+}

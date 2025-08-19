@@ -9,6 +9,7 @@
   color: white;
   text-decoration: none;
   padding: 30px 0 26px 0;
+  border-bottom: 1px, solid, white;
 }
 
 .nav__button-sign-in {
@@ -23,4 +24,55 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.nav__logged-in-opts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav__saved-articles-btn {
+  background-color: transparent;
+  border-radius: 100px;
+  color: white;
+  opacity: 50%;
+
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 64px 26px 34px;
+}
+
+.nav__saved-articles-btn:hover {
+  opacity: 100%;
+}
+
+.nav__logout {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 48px;
+  padding: 0 12px 0 19px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.nav__logout-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 480px) {
+  .nav__link-home {
+    color: white;
+    text-decoration: none;
+    padding: 0;
+  }
 }

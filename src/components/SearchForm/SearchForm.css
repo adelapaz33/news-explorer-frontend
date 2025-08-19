@@ -43,3 +43,27 @@
 .search__bar-button:active {
   background-color: #2a65cc;
 }
+
+@media screen and (max-width: 480px) {
+  .search__bar {
+    display: flex;
+    flex-direction: column;
+    padding: 122px 0 32px 0;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .search__bar-input {
+    width: 288px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .search__bar-button {
+    height: 56px;
+    width: 288px;
+    position: static;
+    left: auto;
+  }
+}

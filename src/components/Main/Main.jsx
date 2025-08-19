@@ -1,6 +1,38 @@
 import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
+import { useState, useEffect } from "react";
+import { getNewsArticles } from "../../utils/newsApi";
+import Preloader from "../Preloader/Preloader";
+import SearchResults from "../SearchResults/SearchResults";
 function Main() {
+  const [hasSearched, setHasSearched] = useState(false);
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  const handleSearchSubmit = async (query) => {
+    setIsLoading(true);
+    setHasSearched(true);
+    setVisibleCount(3);
+
+    try {
+      const newsArticles = await getNewsArticles(query.trim());
+      if (newsArticles.length === 0) {
+        setErrorMessage("No articles found for that topic");
+      } else {
+        setArticles(newsArticles);
+        setErrorMessage("");
+      }
+    } catch (error) {
+      console.error("Search failed:", error);
+      setErrorMessage("Something went wrong. Please try again");
+      setArticles([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <section className="main__hero">
@@ -9,9 +41,15 @@ function Main() {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchForm />
+        <SearchForm onSearch={handleSearchSubmit} />
       </section>
-    
+      {articles.length > 0 && (
+        <SearchResults
+          articles={articles}
+          visibleCount={visibleCount}
+          setVisibleCount={setVisibleCount}
+        />
+      )}
     </>
   );
 }

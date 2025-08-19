@@ -7,6 +7,7 @@ function ModalWithForm({
   footerContent,
   children,
   onClose,
+  onSubmit,
 }) {
   useEffect(() => {
     function handleEscape(event) {
@@ -32,16 +33,14 @@ function ModalWithForm({
             className="modal__close-btn"
           />
         </button>
-        <form
-          // onSubmit={onSubmit}
-          action=""
-          className="modal__form"
-        >
+        <form onSubmit={onSubmit} action="" className="modal__form">
           {children}
           <div className="modal__button-row">
-            <button type="submit" className="modal__submit">
-              {buttonText}
-            </button>
+            {buttonText && (
+              <button type="submit" className="modal__submit">
+                {buttonText}
+              </button>
+            )}
             {footerContent && (
               <div className="modal__footer">{footerContent}</div>
             )}

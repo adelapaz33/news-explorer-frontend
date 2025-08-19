@@ -1,21 +1,28 @@
-import alisonPhoto from "../../assets/SideViewPhoto.jpg";
 import "./NewsCard.css";
 import saveIcon from "../../assets/bookmark.svg";
-function NewsCard() {
+function NewsCard({ article }) {
+  const apiDateString = article.publishedAt;
+  const dateObject = new Date(apiDateString);
+
+  const formattedDate = dateObject.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
   return (
     <li className="card">
       <div className="card__image-container">
-        <img src={alisonPhoto} alt="" className="card__image" />
+        <img src={article.urlToImage} alt="" className="card__image" />
         <button className="card__save-button">
           <img src={saveIcon} alt="" className="card__save-icon" />
         </button>
       </div>
       <section className="card__body">
-        <h2 className="card__date">Date of Article</h2>
-        <h3 className="card__name">Article Name</h3>
-        <p className="card__text">Beginning text of article here...</p>
+        <h2 className="card__date">{formattedDate}</h2>
+        <h3 className="card__name">{article.title}</h3>
+        <p className="card__text">{article.description}</p>
         <div className="card__spacer" />
-        <p className="card__source">WebsiteName</p>
+        <p className="card__source">{article.source.name}</p>
       </section>
     </li>
   );

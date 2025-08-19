@@ -1,12 +1,16 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 function RegisterModal({ isOpen, onClose, setActiveModal }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setActiveModal("success");
+  };
   return (
     <ModalWithForm
       title="Sign Up"
       buttonText="Sign Up"
       isOpen={isOpen}
       onClose={onClose}
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       footerContent={
         <>
           <span className="modal__register-or">or </span>

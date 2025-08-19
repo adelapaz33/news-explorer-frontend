@@ -125,6 +125,11 @@
   margin-bottom: 8px;
 }
 
+.modal__footer-register-success {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .modal__error {
   color: #ff4d00;
   font-size: 16px;

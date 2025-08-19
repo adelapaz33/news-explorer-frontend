@@ -1,12 +1,40 @@
+import { useState } from "react";
+import { authorize } from "../../utils/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-function LoginModal({ onClose, setActiveModal }) {
+function LoginModal({ onClose, setActiveModal, handleLogin }) {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleEmail = (e) => {
+    setFormData({ ...formData, email: e.target.value });
+  };
+
+  const handlePassword = (e) => {
+    setFormData({ ...formData, password: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    authorize(formData.email, formData.password)
+      .then((res) => {
+        localStorage.setItem("token", res.token);
+        handleLogin(res);
+        onClose();
+      })
+      .catch((err) => {
+        setErrorMessage("Invalid email or password.");
+      });
+  };
   return (
     <ModalWithForm
       title="Sign In"
       buttonText="Sign In"
       // isOpen={isOpen}
       onClose={onClose}
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       footerContent={
         <>
           <span className="modal__register-or">or </span>
@@ -28,8 +56,8 @@ function LoginModal({ onClose, setActiveModal }) {
           id="email"
           placeholder="Email"
           required
-          // onChange={handleEmail}
-          // value={formData.email}
+          onChange={handleEmail}
+          value={formData.email}
         />
       </label>
       <label htmlFor="password" className="modal__label">
@@ -40,11 +68,11 @@ function LoginModal({ onClose, setActiveModal }) {
           id="password"
           placeholder="Password"
           required
-          // onChange={handlePassword}
-          // value={formData.password}
+          value={formData.password}
+          onChange={handlePassword}
         />
       </label>
-      {/* {errorMessage && <p className="modal__error">{errorMessage}</p>} */}
+      {errorMessage && <p className="modal__error">{errorMessage}</p>}
     </ModalWithForm>
   );
 }
