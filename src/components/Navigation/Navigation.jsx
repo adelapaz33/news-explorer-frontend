@@ -1,10 +1,24 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 import logoutIcon from "../../assets/logout.svg";
-function Navigation({ setActiveModal, isLoggedIn, currentUser }) {
+import logoutIconDark from "../../assets/logoutIconDark.svg";
+import { useHeaderStyle } from "../../Context/HeaderStyleContext";
+
+function Navigation({
+  setActiveModal,
+  isLoggedIn,
+  currentUser,
+  isMobileMenuOpen,
+  closeMobileMenu,
+  handleLogout,
+}) {
+  const { isHomePage } = useHeaderStyle();
+  const navClass = isHomePage ? "nav nav--light" : "nav nav--dark";
   return (
-    <div className="nav">
-      <Link className="nav__link-home" to="/">
+    <nav
+      className={`${navClass} ${isMobileMenuOpen ? "nav--mobile-open" : ""}`}
+    >
+      <Link className="nav__link-home" to="/" onClick={closeMobileMenu}>
         Home
       </Link>
       {!isLoggedIn && (
@@ -21,17 +35,17 @@ function Navigation({ setActiveModal, isLoggedIn, currentUser }) {
           <Link to="/saved-articles" className="nav__saved-articles-btn">
             Saved Articles
           </Link>
-          <button type="button" className="nav__logout">
-            {currentUser.name}
+          <button type="button" className="nav__logout" onClick={handleLogout}>
+            {currentUser?.name || "User"}
             <img
-              src={logoutIcon}
+              src={isHomePage ? logoutIcon : logoutIconDark}
               alt="Logout Icon"
               className="nav__logout-icon"
             />
           </button>
         </div>
       )}
-    </div>
+    </nav>
   );
 }
 

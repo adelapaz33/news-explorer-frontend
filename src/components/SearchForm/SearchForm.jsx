@@ -32,15 +32,5 @@ function SearchForm({ onSearch }) {
     </form>
   );
 }
-// SearchForm component should handle:
-// - Form submission (handleSearch with preventDefault())
-// - Input validation (checking if field is empty)
-// - Managing its own input state
-// - Showing validation error messages
 
-// Main component should handle:
-// - Making the API call to NewsAPI
-// - Managing the articles state
-// - Managing loading state
-// - Rendering the search results
 export default SearchForm;

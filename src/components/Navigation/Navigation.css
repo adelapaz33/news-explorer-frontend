@@ -5,11 +5,36 @@
   align-items: center;
   font-family: "Roboto 500", "sans-serif";
 }
-.nav__link-home {
+
+.nav--light .nav__saved-articles-btn {
   color: white;
+}
+
+.nav--dark .nav__saved-articles-btn {
+  color: black;
+  opacity: 100%;
+  border-radius: 0px;
+  border-bottom: 3px solid black;
+}
+.nav--dark .nav__logout-icon {
+  width: 16px;
+  height: 17px;
+}
+.nav--light .nav__logout {
+  color: white;
+  border: 1px solid white;
+}
+
+.nav--light .nav__link-home {
+  color: white;
+  border-bottom: 3px solid white;
+}
+.nav--dark .nav__link-home {
+  color: black;
+}
+.nav__link-home {
   text-decoration: none;
   padding: 30px 0 26px 0;
-  border-bottom: 1px, solid, white;
 }
 
 .nav__button-sign-in {
@@ -30,19 +55,24 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 30px;
 }
 .nav__saved-articles-btn {
   background-color: transparent;
   border-radius: 100px;
-  color: white;
   opacity: 50%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  font-size: 16px;
+  line-height: 1;
   cursor: pointer;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 64px 26px 34px;
+  padding: 30px 34px 26px 34px;
 }
 
 .nav__saved-articles-btn:hover {
@@ -51,9 +81,7 @@
 
 .nav__logout {
   background-color: transparent;
-  border: 1px solid white;
   border-radius: 100px;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +98,36 @@
 }
 
 @media screen and (max-width: 480px) {
+  .nav {
+    display: none;
+  }
   .nav__link-home {
     color: white;
     text-decoration: none;
     padding: 0;
+  }
+  .nav--mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 85px; /* adjust based on header height */
+    left: 0;
+    width: 100%;
+    background: #1a1b22;
+    padding: 16px;
+    gap: 12px;
+    animation: dropdown 0.3s ease forwards;
+    z-index: 10;
+  }
+
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

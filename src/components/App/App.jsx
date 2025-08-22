@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ProtectedRoute from "../ProtectedRoutes/ProtectedRoute";
+import { SavedArticlesProvider } from "../../Context/SavedArticlesContext";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import About from "../About/About";
@@ -8,9 +9,11 @@ import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import { authorize, checkToken } from "../../utils/auth";
-import SavedArticles from "../SavedArticles/SavedArticles";
+import SavedArticles from "../SavedArticles/SavedArticlesPage";
 import RegisterSuccessModal from "../RegisterSuccessModal/RegisterSuccessModal";
+import { HeaderStyleContext } from "../../Context/HeaderStyleContext";
 import "./App.css";
+import SavedArticlesPage from "../SavedArticles/SavedArticlesPage";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -19,7 +22,6 @@ function App() {
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const savedArticles = location.pathname === "/saved-articles";
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -40,68 +42,81 @@ function App() {
     setIsLoggedIn(true);
     setCurrentUser(res.data);
   };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+    localStorage.removeItem("token");
+  };
+
   return (
-    <div className="page">
-      <div className="page__content">
-        {isHomePage ? (
-          <div className="page__photo-background">
-            <Header
-              setActiveModal={setActiveModal}
-              isLoggedIn={isLoggedIn}
-              currentUser={currentUser}
-            />
-            <Routes>
-              <Route path="/" element={<Main />} />
-            </Routes>
+    <HeaderStyleContext.Provider value={{ isHomePage }}>
+      <SavedArticlesProvider>
+        <div className="page">
+          <div className="page__content">
+            {isHomePage ? (
+              <div className="page__photo-background">
+                <Header
+                  setActiveModal={setActiveModal}
+                  isLoggedIn={isLoggedIn}
+                  currentUser={currentUser}
+                  handleLogout={handleLogout}
+                />
+                <Routes>
+                  <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
+                </Routes>
+              </div>
+            ) : (
+              <>
+                <Header
+                  setActiveModal={setActiveModal}
+                  isLoggedIn={isLoggedIn}
+                  currentUser={currentUser}
+                  isHomePage={isHomePage}
+                />
+
+                <Routes>
+                  <Route
+                    path="/saved-articles"
+                    element={
+                      <ProtectedRoute isLoggedIn={isLoggedIn}>
+                        <SavedArticlesPage
+                          currentUser={currentUser}
+                          isLoggedIn={isLoggedIn}
+                        />
+                      </ProtectedRoute>
+                    }
+                  />
+                </Routes>
+              </>
+            )}
+            {isHomePage && <About />}
+
+            <Footer />
           </div>
-        ) : (
-          <>
-            <Header
+          {activeModal === "login" && (
+            <LoginModal
+              onClose={() => setActiveModal("")}
               setActiveModal={setActiveModal}
-              isLoggedIn={isLoggedIn}
-              currentUser={currentUser}
-              isHomePage={isHomePage}
+              handleLogin={handleLogin}
             />
+          )}
 
-            <Routes>
-              <Route
-                path="/saved-articles"
-                element={
-                  <ProtectedRoute
-                    isLoggedIn={isLoggedIn}
-                    savedArticles={savedArticles}
-                  >
-                    <SavedArticles />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </>
-        )}
-        <About />
-        <Footer />
-      </div>
-      {activeModal === "login" && (
-        <LoginModal
-          onClose={() => setActiveModal("")}
-          setActiveModal={setActiveModal}
-          handleLogin={handleLogin}
-        />
-      )}
-
-      {activeModal === "signup" && (
-        <RegisterModal
-          onClose={() => setActiveModal("")}
-          setActiveModal={setActiveModal}
-        />
-      )}
-      {activeModal === "success" && (
-        <RegisterSuccessModal
-          setActiveModal={setActiveModal}
-          onClose={() => setActiveModal("")}
-        />
-      )}
-    </div>
+          {activeModal === "signup" && (
+            <RegisterModal
+              onClose={() => setActiveModal("")}
+              setActiveModal={setActiveModal}
+            />
+          )}
+          {activeModal === "success" && (
+            <RegisterSuccessModal
+              setActiveModal={setActiveModal}
+              onClose={() => setActiveModal("")}
+            />
+          )}
+        </div>
+      </SavedArticlesProvider>
+    </HeaderStyleContext.Provider>
   );
 }
 

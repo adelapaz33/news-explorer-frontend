@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getNewsArticles } from "../../utils/newsApi";
 import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
-function Main() {
+function Main({ currentSearchTerm, isLoggedIn }) {
   const [hasSearched, setHasSearched] = useState(false);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -48,6 +48,8 @@ function Main() {
           articles={articles}
           visibleCount={visibleCount}
           setVisibleCount={setVisibleCount}
+          currentSearchTerm={currentSearchTerm}
+          isLoggedIn={isLoggedIn}
         />
       )}
     </>

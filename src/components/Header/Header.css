@@ -3,9 +3,16 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: white;
   padding: 0 104px 0 104px;
   border-bottom: 1px solid #d1d2d6;
+}
+
+.header--dark .header__title {
+  color: black;
+}
+
+.header--light .header__title {
+  color: white;
 }
 .header__title {
   margin: 0;
@@ -13,11 +20,36 @@
   font-size: 20px;
   line-height: 24px;
   text-decoration: none;
-  color: white;
+  /* color: white; */
+}
+
+.header__menu-btn {
+  display: none;
+}
+
+.header__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }
 
 @media screen and (max-width: 480px) {
   .header {
     padding: 16px;
+  }
+
+  .header__title {
+    font-size: 16px;
+  }
+  .header__menu-btn {
+    display: block;
+    background-color: transparent;
+    border: none;
+    height: 24px;
+    width: 24px;
   }
 }

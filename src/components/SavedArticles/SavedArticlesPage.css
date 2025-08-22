@@ -1,0 +1,30 @@
+.saved {
+  padding: 24px 0 32px 0;
+}
+.saved__description {
+  font-size: 14px;
+  line-height: 24px;
+  opacity: 50%;
+  margin: 0;
+  padding-left: 40px;
+}
+.saved__header {
+  font-size: 40px;
+  line-height: 46px;
+  padding-left: 40px;
+}
+
+.saved__data {
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 40px;
+}
+
+.saved__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style-type: none;
+  background-color: #f5f6f7;
+  padding: 0;
+}

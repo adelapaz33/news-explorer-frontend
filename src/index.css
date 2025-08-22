@@ -5,13 +5,14 @@ body {
   font-family: "Roboto Slab", "sans-serif";
   font-weight: 400;
 }
-
+.saved__description,
 .search__bar-input,
 .main__text,
 .about__text,
 .footer__text,
 .footer__nav,
-.card__text {
+.card__text,
+.saved__data {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
@@ -21,7 +22,8 @@ body {
 .modal__register-btn,
 .modal__footer,
 .modal__button-row,
-.results__show-more-btn {
+.results__show-more-btn,
+.card__delete-text {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }

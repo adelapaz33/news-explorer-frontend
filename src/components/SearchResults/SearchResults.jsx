@@ -1,11 +1,21 @@
 import "./SearchResults.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
-function SearchResults({ articles, visibleCount, setVisibleCount }) {
+function SearchResults({
+  articles,
+  visibleCount,
+  setVisibleCount,
+  currentSearchTerm,
+  isLoggedIn,
+}) {
   return (
     <div className="results">
       <h3 className="results__header">Search Results</h3>
-      <NewsCardList articles={articles.slice(0, visibleCount)} />
+      <NewsCardList
+        currentSearchTerm={currentSearchTerm}
+        articles={articles.slice(0, visibleCount)}
+        isLoggedIn={isLoggedIn}
+      />
       {articles.length > visibleCount && (
         <button
           className="results__show-more-btn"

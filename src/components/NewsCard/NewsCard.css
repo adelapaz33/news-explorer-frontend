@@ -40,6 +40,67 @@
 .card__save-icon:hover {
   opacity: 1;
 }
+
+.card__save-icon--active {
+  opacity: 1;
+}
+
+.card__delete-button {
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  cursor: pointer;
+  top: 24px;
+  right: 24px;
+  left: auto;
+  background-color: white;
+}
+.card__delete-icon {
+  opacity: 0.5;
+}
+
+.card__delete-icon:hover {
+  opacity: 1;
+}
+
+.card__delete-wrapper:hover .card__delete-text {
+  opacity: 1;
+}
+
+.card__delete-text {
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+  top: 24px;
+  left: 195px;
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 100%;
+  border: 14px solid white;
+  border-radius: 8px;
+  opacity: 0;
+}
+.card__save-text {
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+  top: 24px;
+  left: 143px;
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 100%;
+  border: 14px solid white;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.card__save-wrapper:hover .card__save-text {
+  opacity: 1;
+}
 .card__body {
   padding: 20px 24px 24px 24px;
   display: flex;
