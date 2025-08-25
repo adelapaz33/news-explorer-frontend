@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getNewsArticles } from "../../utils/newsApi";
 import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
-function Main({ currentSearchTerm, isLoggedIn }) {
+function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
   const [hasSearched, setHasSearched] = useState(false);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +12,7 @@ function Main({ currentSearchTerm, isLoggedIn }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleSearchSubmit = async (query) => {
+    setCurrentSearchTerm(query);
     setIsLoading(true);
     setHasSearched(true);
     setVisibleCount(3);
@@ -43,6 +44,14 @@ function Main({ currentSearchTerm, isLoggedIn }) {
         </p>
         <SearchForm onSearch={handleSearchSubmit} />
       </section>
+
+      {isLoading && (
+        <section className="main__loader">
+          {" "}
+          <Preloader articleCount={articles.length} />{" "}
+        </section>
+      )}
+
       {articles.length > 0 && (
         <SearchResults
           articles={articles}

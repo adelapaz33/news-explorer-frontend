@@ -1,9 +1,33 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useState } from "react";
 function RegisterModal({ isOpen, onClose, setActiveModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setActiveModal("success");
   };
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const handleEmail = (e) => {
+    setFormData((prev) => ({ ...prev, email: e.target.value }));
+  };
+
+  const handlePassword = (e) => {
+    setFormData((prev) => ({ ...prev, password: e.target.value }));
+  };
+
+  const handleUsername = (e) => {
+    setFormData((prev) => ({ ...prev, username: e.target.value }));
+  };
+
+  const isValid =
+    formData.email.trim() !== "" &&
+    formData.password.trim() !== "" &&
+    formData.username.trim() !== "";
   return (
     <ModalWithForm
       title="Sign Up"
@@ -11,6 +35,7 @@ function RegisterModal({ isOpen, onClose, setActiveModal }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      isValid={isValid}
       footerContent={
         <>
           <span className="modal__register-or">or </span>
@@ -32,8 +57,8 @@ function RegisterModal({ isOpen, onClose, setActiveModal }) {
           id="emailRegister"
           placeholder="Email"
           required
-          // onChange={handleEmail}
-          // value={formData.email}
+          onChange={handleEmail}
+          value={formData.email}
         />
       </label>
       <label htmlFor="passwordRegister" className="modal__label">
@@ -44,8 +69,8 @@ function RegisterModal({ isOpen, onClose, setActiveModal }) {
           id="passwordRegister"
           placeholder="Password"
           required
-          // onChange={handlePassword}
-          // value={formData.password}
+          onChange={handlePassword}
+          value={formData.password}
         />
       </label>
       <label htmlFor="nameRegister" className="modal__label">
@@ -56,8 +81,8 @@ function RegisterModal({ isOpen, onClose, setActiveModal }) {
           id="nameRegister"
           placeholder="Name"
           required
-          // onChange={handleNameChange}
-          // value={formData.name}
+          onChange={handleUsername}
+          value={formData.username}
         />
       </label>
     </ModalWithForm>

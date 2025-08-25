@@ -2,15 +2,22 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
 import menuIcon from "../../assets/menu.svg";
+import menuIconDark from "../../assets/menuDark.svg";
 import { useState } from "react";
 import { useHeaderStyle } from "../../Context/HeaderStyleContext";
 
-function Header({ setActiveModal, isLoggedIn, currentUser, handleLogout }) {
+function Header({
+  setActiveModal,
+  isLoggedIn,
+  currentUser,
+  handleLogout,
+  isModalOpen,
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isHomePage } = useHeaderStyle();
-  const headerClass = isHomePage
-    ? "header header--light"
-    : "header header--dark";
+  const headerClass = `header ${
+    isHomePage ? "header--light" : "header--dark"
+  } ${isMobileMenuOpen ? "header--mobile-open" : ""}`;
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -24,14 +31,15 @@ function Header({ setActiveModal, isLoggedIn, currentUser, handleLogout }) {
       <Link className="header__title" to="/">
         NewsExplorer
       </Link>
-      <button className="header__menu-btn" onClick={toggleMobileMenu}>
-        <img
-          className="header__menu-btn-icon"
-          src={menuIcon}
-          alt="Menu Drop Down Icon"
-        />
-      </button>
-
+      {!isModalOpen && (
+        <button className="header__menu-btn" onClick={toggleMobileMenu}>
+          <img
+            className="header__menu-btn-icon"
+            src={isHomePage ? menuIcon : menuIconDark}
+            alt="Menu Drop Down Icon"
+          />
+        </button>
+      )}
       {isMobileMenuOpen && (
         <div className="header__overlay" onClick={closeMobileMenu}></div>
       )}
@@ -42,6 +50,7 @@ function Header({ setActiveModal, isLoggedIn, currentUser, handleLogout }) {
         isMobileMenuOpen={isMobileMenuOpen}
         closeMobileMenu={closeMobileMenu}
         handleLogout={handleLogout}
+    
       />
     </header>
   );

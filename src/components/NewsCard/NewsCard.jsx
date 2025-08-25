@@ -65,6 +65,9 @@ function NewsCard({ article, currentSearchTerm, isLoggedIn }) {
             <span className="card__delete-text">Remove from Saved</span>
           </div>
         )}
+        {!isHomePage && (
+          <span className="card__keyword">{currentSearchTerm}</span>
+        )}
       </div>
       <section className="card__body">
         <h2 className="card__date">{formattedDate}</h2>

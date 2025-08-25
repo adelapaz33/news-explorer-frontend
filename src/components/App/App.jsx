@@ -19,7 +19,8 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [currentSearchTerm, setCurrentSearchTerm] = useState("");
+  const isModalOpen = activeModal !== "";
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -61,9 +62,19 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   currentUser={currentUser}
                   handleLogout={handleLogout}
+                  isModalOpen={isModalOpen}
                 />
                 <Routes>
-                  <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
+                  <Route
+                    path="/"
+                    element={
+                      <Main
+                        isLoggedIn={isLoggedIn}
+                        currentSearchTerm={currentSearchTerm}
+                        setCurrentSearchTerm={setCurrentSearchTerm}
+                      />
+                    }
+                  />
                 </Routes>
               </div>
             ) : (
@@ -83,6 +94,7 @@ function App() {
                         <SavedArticlesPage
                           currentUser={currentUser}
                           isLoggedIn={isLoggedIn}
+                          currentSearchTerm={currentSearchTerm}
                         />
                       </ProtectedRoute>
                     }

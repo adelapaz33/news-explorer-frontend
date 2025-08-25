@@ -34,8 +34,6 @@
   font-size: 24px;
   line-height: 100%;
   padding-bottom: 24px;
-  font-size: 16px;
-  line-height: 20px;
   margin: 0;
 }
 
@@ -87,6 +85,14 @@
   opacity: 0.6;
 }
 
+.modal__submit:disabled {
+  background-color: #e6e8eb;
+}
+
+.modal__submit:hover:disabled {
+  opacity: 1;
+}
+
 .modal__log-in-btn {
   border: none;
   background-color: transparent;
@@ -103,8 +109,6 @@
   line-height: 20px;
   cursor: pointer;
   color: #2f71e5;
-  /* margin: 0;
-    padding: 0; */
 }
 .modal__register-btn:hover {
   opacity: 50%;
@@ -134,4 +138,36 @@
   color: #ff4d00;
   font-size: 16px;
   line-height: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: white;
+    overflow-y: auto;
+  }
+  .modal.modal_opened .modal__close {
+    top: 16px;
+    right: 16px;
+    background-color: black;
+  }
+  .modal__content {
+    margin: 0;
+    padding: 16px;
+  }
+  /* .modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: black;
+  } */
+  .modal__close-btn {
+    width: 24px;
+    height: 24px;
+  }
 }

@@ -1,4 +1,4 @@
-.circle-preloader {
+.preloader__circle {
   display: block;
   width: 50px;
   height: 50px;
@@ -18,4 +18,27 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.preloader__text {
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+}
+
+.preloader__results-image {
+  height: 82.5px;
+  width: 82.5px;
+}
+
+.preloader__results-header {
+  color: black;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.preloader__results-text {
+  color: #b6bcbf;
+  font-size: 18px;
+  line-height: 24px;
 }

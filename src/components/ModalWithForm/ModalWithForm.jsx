@@ -8,6 +8,7 @@ function ModalWithForm({
   children,
   onClose,
   onSubmit,
+  isValid,
 }) {
   useEffect(() => {
     function handleEscape(event) {
@@ -25,7 +26,6 @@ function ModalWithForm({
   return (
     <div className="modal modal_opened">
       <div className="modal__content">
-        <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
           <img
             src={closeButton}
@@ -33,11 +33,16 @@ function ModalWithForm({
             className="modal__close-btn"
           />
         </button>
+        <h2 className="modal__title">{title}</h2>
         <form onSubmit={onSubmit} action="" className="modal__form">
           {children}
           <div className="modal__button-row">
             {buttonText && (
-              <button type="submit" className="modal__submit">
+              <button
+                type="submit"
+                className="modal__submit"
+                disabled={!isValid}
+              >
                 {buttonText}
               </button>
             )}

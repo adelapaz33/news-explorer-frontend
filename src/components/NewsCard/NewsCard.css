@@ -52,8 +52,8 @@
   width: 40px;
   position: absolute;
   cursor: pointer;
-  top: 24px;
-  right: 24px;
+  top: 8px;
+  right: 8px;
   left: auto;
   background-color: white;
 }
@@ -74,8 +74,8 @@
   background-color: white;
   border-radius: 8px;
   position: absolute;
-  top: 24px;
-  left: 195px;
+  top: 8px;
+  left: 200px;
   margin-right: 8px;
   font-size: 12px;
   line-height: 100%;
@@ -88,7 +88,7 @@
   background-color: white;
   border-radius: 8px;
   position: absolute;
-  top: 24px;
+  top: 8px;
   left: 143px;
   margin-right: 8px;
   font-size: 12px;
@@ -100,6 +100,18 @@
 
 .card__save-wrapper:hover .card__save-text {
   opacity: 1;
+}
+
+.card__keyword {
+  font-size: 14px;
+  line-height: 100%;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  padding: 14px 20px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
 }
 .card__body {
   padding: 20px 24px 24px 24px;

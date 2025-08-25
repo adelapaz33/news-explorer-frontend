@@ -12,7 +12,9 @@ body {
 .footer__text,
 .footer__nav,
 .card__text,
-.saved__data {
+.saved__data,
+.preloader__results-text,
+.preloader__text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
@@ -23,7 +25,8 @@ body {
 .modal__footer,
 .modal__button-row,
 .results__show-more-btn,
-.card__delete-text {
+.card__delete-text,
+.card__keyword {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }

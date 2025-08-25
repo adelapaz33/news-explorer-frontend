@@ -8,7 +8,7 @@ function NewsCardList({ articles, currentSearchTerm, isLoggedIn }) {
         <NewsCard
           key={article.url} // changed article.url to index - need to change back?
           article={article}
-          currentSearchTerm={article.searchTerm}
+          currentSearchTerm={currentSearchTerm}
           isLoggedIn={isLoggedIn}
         />
       ))}

@@ -8,11 +8,13 @@ function LoginModal({ onClose, setActiveModal, handleLogin }) {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const handleEmail = (e) => {
-    setFormData({ ...formData, email: e.target.value });
+    setFormData((prev) => ({ ...prev, email: e.target.value }));
   };
 
+  const isValid =
+    formData.email.trim() !== "" && formData.password.trim() !== "";
   const handlePassword = (e) => {
-    setFormData({ ...formData, password: e.target.value });
+    setFormData((prev) => ({ ...prev, password: e.target.value }));
   };
 
   const handleSubmit = (e) => {
@@ -32,9 +34,9 @@ function LoginModal({ onClose, setActiveModal, handleLogin }) {
     <ModalWithForm
       title="Sign In"
       buttonText="Sign In"
-      // isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      isValid={isValid}
       footerContent={
         <>
           <span className="modal__register-or">or </span>

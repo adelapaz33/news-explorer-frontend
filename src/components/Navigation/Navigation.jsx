@@ -25,7 +25,10 @@ function Navigation({
         <button
           type="button"
           className="nav__button-sign-in"
-          onClick={() => setActiveModal("login")}
+          onClick={() => {
+            closeMobileMenu();
+            setActiveModal("login");
+          }}
         >
           Sign In
         </button>

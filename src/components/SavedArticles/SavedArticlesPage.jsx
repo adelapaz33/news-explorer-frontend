@@ -2,7 +2,7 @@ import "./SavedArticlesPage.css";
 import { useSavedArticles } from "../../Context/SavedArticlesContext";
 import NewsCard from "../NewsCard/NewsCard";
 
-function SavedArticlesPage({ currentUser, isLoggedIn }) {
+function SavedArticlesPage({ currentUser, isLoggedIn, currentSearchTerm }) {
   const { savedArticles } = useSavedArticles();
   return (
     <div className="saved">
@@ -14,24 +14,39 @@ function SavedArticlesPage({ currentUser, isLoggedIn }) {
       </h2>
       <p className="saved__data">
         By keywords:{" "}
-        {savedArticles
-          .map((a) => a.searchTerm)
-          .filter(Boolean)
-          .join(", ")}
+        {(() => {
+          const keywords = savedArticles
+            .map((a) => a.searchTerm)
+            .filter(Boolean);
+
+          const uniqueKeywords = [...new Set(keywords)];
+          const visibleKeywords = uniqueKeywords.slice(0, 2);
+          const remainingCount = uniqueKeywords.length - visibleKeywords.length;
+
+          return (
+            <>
+              {visibleKeywords.join(", ")}
+              {remainingCount > 0 && ` and ${remainingCount} more`}
+            </>
+          );
+        })()}
       </p>
       {savedArticles.length === 0 ? (
         <p>No saved articles yet</p>
       ) : (
-        <ul className="saved__list">
-          {" "}
-          {savedArticles.map((article) => (
-            <NewsCard
-              article={article}
-              key={article.url}
-              isLoggedIn={isLoggedIn}
-            />
-          ))}
-        </ul>
+        <div className="saved__list-wrapper">
+          <ul className="saved__list">
+            {" "}
+            {savedArticles.map((article) => (
+              <NewsCard
+                article={article}
+                key={article.url}
+                isLoggedIn={isLoggedIn}
+                currentSearchTerm={currentSearchTerm}
+              />
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
