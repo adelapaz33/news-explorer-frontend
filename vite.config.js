@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/news-explorer-frontend/",
+  base:
+    process.env.NODE_ENV === "production" ? "/news-explorer-frontend/" : "/",
   plugins: [react()],
   server: {
     port: 3003,
