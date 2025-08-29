@@ -4,7 +4,7 @@ import "./NewsCardList.css";
 function NewsCardList({ articles, currentSearchTerm, isLoggedIn }) {
   return (
     <ul className="card-list">
-      {articles.map((article, index) => (
+      {articles.map((article) => ( // removed index from here - need to add back? 
         <NewsCard
           key={article.url} // changed article.url to index - need to change back?
           article={article}

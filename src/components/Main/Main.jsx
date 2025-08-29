@@ -5,9 +5,11 @@ import { getNewsArticles } from "../../utils/newsApi";
 import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
 function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
+  // eslint-disable-next-line no-unused-vars
   const [hasSearched, setHasSearched] = useState(false);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [errorMessage, setErrorMessage] = useState("");
   const [visibleCount, setVisibleCount] = useState(3);
 
@@ -37,7 +39,7 @@ function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
   return (
     <>
       <section className="main__hero">
-        <h2 className="main__header">What's going on in the world?</h2>
+        <h2 className="main__header">What&apos;s going on in the world?</h2>
         <p className="main__text">
           Find the latest news on any topic and save them in your personal
           account.
