@@ -26,7 +26,7 @@ function LoginModal({ onClose, setActiveModal, handleLogin }) {
         handleLogin(res);
         onClose();
       })
-      .catch((err) => {
+      .catch(() => {
         setErrorMessage("Invalid email or password.");
       });
   };

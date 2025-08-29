@@ -1,6 +1,6 @@
 import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getNewsArticles } from "../../utils/newsApi";
 import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
