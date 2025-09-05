@@ -24,7 +24,7 @@ function ModalWithForm({
     };
   }, [onClose]);
   return (
-    <div className="modal modal_opened">
+    <div className="modal modal--opened">
       <div className="modal__content">
         <button onClick={onClose} type="button" className="modal__close">
           <img

@@ -16,7 +16,7 @@ function Header({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isHomePage } = useHeaderStyle();
   const headerClass = `header ${
-    isHomePage ? "header--light" : "header--dark"
+    isHomePage ? "header__title--light" : "header__title--dark"
   } ${isMobileMenuOpen ? "header--mobile-open" : ""}`;
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -28,7 +28,7 @@ function Header({
 
   return (
     <header className={headerClass}>
-      <Link className="header__title" to="/">
+      <Link className={`header__title ${isHomePage ? "header__title--light" : "header__title--dark"}`}to="/">
         NewsExplorer
       </Link>
       {!isModalOpen && (

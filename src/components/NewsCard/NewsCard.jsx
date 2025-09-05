@@ -71,7 +71,7 @@ function NewsCard({ article, currentSearchTerm, isLoggedIn }) {
       </div>
       <section className="card__body">
         <h2 className="card__date">{formattedDate}</h2>
-        <h3 className="card__name">{article.title}</h3>
+        <h3 className="card__title">{article.title}</h3>
         <p className="card__text">{article.description}</p>
         <div className="card__spacer" />
         <p className="card__source">{article.source.name}</p>

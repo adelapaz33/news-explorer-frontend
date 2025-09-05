@@ -6,30 +6,30 @@
   font-family: "Roboto 500", "sans-serif";
 }
 
-.nav--light .nav__saved-articles-btn {
+.nav__saved-articles-btn--light {
   color: white;
 }
 
-.nav--dark .nav__saved-articles-btn {
+.nav__saved-articles-btn--dark {
   color: black;
   opacity: 100%;
   border-radius: 0px;
   border-bottom: 3px solid black;
 }
-.nav--dark .nav__logout-icon {
+.nav__logout-icon--dark {
   width: 16px;
   height: 17px;
 }
-.nav--light .nav__logout {
+.nav__logout--light {
   color: white;
   border: 1px solid white;
 }
 
-.nav--light .nav__link-home {
+.nav__link-home--light {
   color: white;
   border-bottom: 3px solid white;
 }
-.nav--dark .nav__link-home {
+.nav__link-home--dark {
   color: black;
 }
 .nav__link-home {
@@ -133,7 +133,7 @@
     width: 288px;
     padding: 16px 16px 22px 16px;
   }
-  .nav--light .nav__link-home {
+  .nav__link-home--light {
     border-bottom: none;
   }
 

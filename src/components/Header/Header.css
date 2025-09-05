@@ -7,11 +7,11 @@
   border-bottom: 1px solid #d1d2d6;
 }
 
-.header--dark .header__title {
+.header__title--dark {
   color: black;
 }
 
-.header--light .header__title {
+.header__title--light {
   color: white;
 }
 .header__title {

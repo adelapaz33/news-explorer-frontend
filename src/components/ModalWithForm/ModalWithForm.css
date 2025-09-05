@@ -10,7 +10,7 @@
   visibility: hidden;
   border-radius: 8px;
 }
-.modal_opened {
+.modal--opened {
   visibility: visible;
   opacity: 1;
 }
@@ -155,7 +155,9 @@
     top: 16px;
     right: 16px;
     background-color: black;
+    /* fix this descendant selector  */
   }
+
   .modal__content {
     margin: 0;
     padding: 16px;
