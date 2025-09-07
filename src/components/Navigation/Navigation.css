@@ -97,6 +97,15 @@
   height: 24px;
 }
 
+@media screen and (max-width: 768px) {
+  .nav {
+    gap: 16px;
+  }
+  .nav__logged-in-opts {
+    gap: 16px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .nav {
     display: none;
