@@ -10,7 +10,7 @@ function SearchResults({
 }) {
   return (
     <div className="results">
-      <h3 className="results__header">Search Results</h3>
+      <h2 className="results__header">Search Results</h2>
       <NewsCardList
         currentSearchTerm={currentSearchTerm}
         articles={articles.slice(0, visibleCount)}

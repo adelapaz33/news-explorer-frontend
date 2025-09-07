@@ -69,13 +69,13 @@ function NewsCard({ article, currentSearchTerm, isLoggedIn }) {
           <span className="card__keyword">{currentSearchTerm}</span>
         )}
       </div>
-      <section className="card__body">
-        <h2 className="card__date">{formattedDate}</h2>
-        <h3 className="card__title">{article.title}</h3>
+      <div className="card__body">
+        <h4 className="card__date">{formattedDate}</h4>
+        <h4 className="card__title">{article.title}</h4>
         <p className="card__text">{article.description}</p>
         <div className="card__spacer" />
         <p className="card__source">{article.source.name}</p>
-      </section>
+      </div>
     </li>
   );
 }
