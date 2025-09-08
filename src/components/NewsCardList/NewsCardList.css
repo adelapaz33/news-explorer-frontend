@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   list-style-type: none;
+  padding: 0;
 }
 @media screen and (max-width: 768px) {
   .card-list {

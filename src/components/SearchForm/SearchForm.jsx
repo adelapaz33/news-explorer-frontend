@@ -18,6 +18,7 @@ function SearchForm({ onSearch }) {
   };
   return (
     <form action="" className="search__bar" onSubmit={handleSearch}>
+      {/* should I add something to action?? Difference between action and onSubmit */}
       <input
         type="text"
         className="search__bar-input"

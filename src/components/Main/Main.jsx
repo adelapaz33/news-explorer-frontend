@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getNewsArticles } from "../../utils/newsApi";
 import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
+
 function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
   // eslint-disable-next-line no-unused-vars
   const [hasSearched, setHasSearched] = useState(false);
@@ -30,7 +31,7 @@ function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
     } catch (error) {
       console.error("Search failed:", error);
       setErrorMessage("Something went wrong. Please try again");
-      setArticles([]);
+      setArticles([]); // needs to be 0??
     } finally {
       setIsLoading(false);
     }
@@ -50,7 +51,15 @@ function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
       {isLoading && (
         <section className="main__loader">
           {" "}
-          <Preloader articleCount={articles.length} />{" "}
+          <Preloader
+            isLoading={isLoading}
+            articleCount={articles.length}
+          />{" "}
+        </section>
+      )}
+      {!isLoading && hasSearched && articles.length === 0 && (
+        <section className="main__loader">
+          <Preloader articleCount={0} hasSearched={hasSearched} />
         </section>
       )}
 

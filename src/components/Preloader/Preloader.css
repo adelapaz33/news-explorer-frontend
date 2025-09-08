@@ -24,8 +24,20 @@
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
+  position: absolute;
+  top: calc(50% + 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
+.preloader__results {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 .preloader__results-image {
   height: 82.5px;
   width: 82.5px;
