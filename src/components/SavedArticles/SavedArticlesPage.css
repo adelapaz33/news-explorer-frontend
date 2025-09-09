@@ -34,7 +34,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .saved__list-wrapper {
     padding: 32px 40px;
   }
@@ -43,13 +43,14 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .saved__list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
     padding: 0;
     row-gap: 10px;
+    justify-items: center;
   }
 
   .saved__list-wrapper {

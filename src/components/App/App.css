@@ -10,8 +10,3 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-
-/* .footer {
-  margin-bottom: 0;
-  padding-bottom: 22px; probably dont need this -- not follwing BEM styling
-} */

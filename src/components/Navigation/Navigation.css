@@ -8,12 +8,13 @@
 
 .nav__saved-articles-btn--light {
   color: white;
+  border-radius: 100px;
+  opacity: 50%;
 }
 
 .nav__saved-articles-btn--dark {
   color: black;
-  opacity: 100%;
-  border-radius: 0px;
+  border-radius: 0;
   border-bottom: 3px solid black;
 }
 .nav__logout-icon--dark {
@@ -31,6 +32,9 @@
 }
 .nav__link-home--dark {
   color: black;
+}
+.nav__link-home--dark:hover {
+  opacity: 50%;
 }
 .nav__link-home {
   text-decoration: none;
@@ -59,8 +63,7 @@
 }
 .nav__saved-articles-btn {
   background-color: transparent;
-  border-radius: 100px;
-  opacity: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,13 +94,16 @@
   cursor: pointer;
   gap: 10px;
 }
+.nav__logout:hover {
+  opacity: 50%;
+}
 
 .nav__logout-icon {
   width: 24px;
   height: 24px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .nav {
     gap: 16px;
   }
@@ -106,10 +112,11 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .nav {
     display: none;
   }
+
   .nav__link-home {
     color: white;
     text-decoration: none;
@@ -130,22 +137,28 @@
     z-index: 10;
   }
   .nav__button-sign-in {
-    width: 256px;
-  }
-  .nav__link-home {
     height: 56px;
     width: 288px;
+  }
+  .nav__link-home {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 56px;
     width: 288px;
-    padding: 16px 16px 22px 16px;
   }
   .nav__link-home--light {
     border-bottom: none;
   }
 
+  .nav__saved-articles-btn {
+    padding-left: 0;
+  }
+
+  .nav__logout {
+    background-color: transparent;
+    border: none;
+  }
   @keyframes dropdown {
     from {
       opacity: 0;

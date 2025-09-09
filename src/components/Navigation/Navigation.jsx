@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoutIcon from "../../assets/logout.svg";
 import logoutIconDark from "../../assets/logoutIconDark.svg";
 import { useHeaderStyle } from "../../Context/HeaderStyleContext";
+import { useLocation } from "react-router-dom";
 
 function Navigation({
   setActiveModal,
@@ -13,9 +14,12 @@ function Navigation({
   handleLogout,
 }) {
   const { isHomePage } = useHeaderStyle();
-  // const navClass = isHomePage ? "nav nav--light" : "nav nav--dark";
+
+  const location = useLocation();
+  const isSavedArticlesPage = location.pathname === "/saved-articles";
+
   return (
-    <nav className={`nav ${isMobileMenuOpen ? "nav--mobile-open" : ""}`}>
+    <nav className={`nav ${isMobileMenuOpen ? "nav--mobile-open" : ""} `}>
       <Link
         className={`nav__link-home ${isHomePage ? "nav__link-home--light" : "nav__link-home--dark"}`}
         to="/"

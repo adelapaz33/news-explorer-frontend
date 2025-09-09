@@ -26,7 +26,7 @@
   background-color: #f5f6f7;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .main__hero {
     padding: 0 16px 0 16px;
   }
