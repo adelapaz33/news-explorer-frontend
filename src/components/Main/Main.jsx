@@ -6,7 +6,6 @@ import Preloader from "../Preloader/Preloader";
 import SearchResults from "../SearchResults/SearchResults";
 
 function Main({ currentSearchTerm, isLoggedIn, setCurrentSearchTerm }) {
-  // eslint-disable-next-line no-unused-vars
   const [hasSearched, setHasSearched] = useState(false);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

@@ -75,27 +75,30 @@
   border-radius: 8px;
   position: absolute;
   top: 8px;
-  left: 200px;
+  right: 50px;
   margin-right: 8px;
   font-size: 12px;
   line-height: 100%;
   border: 14px solid white;
   border-radius: 8px;
   opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 .card__save-text {
   color: black;
   background-color: white;
   border-radius: 8px;
   position: absolute;
-  top: 8px;
-  left: 143px;
+  top: 24px;
+  right: 68px;
   margin-right: 8px;
   font-size: 12px;
   line-height: 100%;
   border: 14px solid white;
   border-radius: 8px;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .card__save-wrapper:hover .card__save-text {

@@ -32,7 +32,7 @@ function SavedArticlesPage({ currentUser, isLoggedIn, currentSearchTerm }) {
         })()}
       </p>
       {savedArticles.length === 0 ? (
-        <p>No saved articles yet</p>
+        <p className="saved__empty">No saved articles yet</p>
       ) : (
         <div className="saved__list-wrapper">
           <ul className="saved__list">
