@@ -53,7 +53,7 @@ function App() {
     <HeaderStyleContext.Provider value={{ isHomePage }}>
       <SavedArticlesProvider>
         <div className="page">
-          <div className="page__content">
+          <main className="page__content">
             {isHomePage ? (
               <div className="page__photo-background">
                 <Header
@@ -104,7 +104,7 @@ function App() {
             {isHomePage && <About />}
 
             <Footer />
-          </div>
+          </main>
           {activeModal === "login" && (
             <LoginModal
               onClose={() => setActiveModal("")}

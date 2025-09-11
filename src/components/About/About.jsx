@@ -2,7 +2,7 @@ import "./About.css";
 import alisonPhoto from "../../assets/SideViewPhoto.jpg";
 function About() {
   return (
-    <div className="about__section">
+    <section className="about__section">
       <img src={alisonPhoto} alt="Headshot" className="about__image" />
       <div className="about__section-text">
         <h2 className="about__header">About the Author</h2>
@@ -25,7 +25,7 @@ function About() {
           functional as they are intuitive.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 
