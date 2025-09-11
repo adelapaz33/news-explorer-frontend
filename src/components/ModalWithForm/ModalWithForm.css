@@ -162,14 +162,21 @@
     margin: 0;
     padding: 16px;
   }
-  /* .modal__close {
+  .modal__close {
     position: absolute;
     top: 16px;
     right: 16px;
-    background-color: black;
-  } */
+    width: 24px;
+    height: 24px;
+  }
   .modal__close-btn {
     width: 24px;
     height: 24px;
+    background-color: #2f71e5;
+    opacity: 0.75;
+  }
+
+  .modal__close-btn:hover {
+    opacity: 1;
   }
 }
