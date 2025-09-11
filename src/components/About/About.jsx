@@ -17,12 +17,12 @@ function About() {
         </p>
         <p className="about__text">
           Now, I’m building full-stack applications just like NewsExplorer with
-          JavaScript, React, Node.js, and MongoDB. My years as a music eductor
-          and fundraiser for the arts have taught me how to think on my feet,
-          communicate clearly, and adapt to different needs — all skills I now
-          apply to writing and debugging code. I’m excited to keep growing,
-          collaborate with thoughtful teams, and create tools that are as
-          functional as they are intuitive.
+          JavaScript, React, Node.js, and MongoDB. I enjoy designing clean,
+          responsive interfaces, writing maintainable code, and structuring
+          backends that scale. My focus is on building applications that are
+          functional, intuitive, and reliable and I’m excited to keep learning,
+          solving complex problems, and collaborating with teams that value good
+          code.
         </p>
       </div>
     </section>
