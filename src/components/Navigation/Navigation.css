@@ -9,7 +9,6 @@
 .nav__saved-articles-btn--light {
   color: white;
   border-radius: 100px;
-  opacity: 50%;
 }
 
 .nav__saved-articles-btn--dark {
@@ -63,7 +62,6 @@
 }
 .nav__saved-articles-btn {
   background-color: transparent;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +77,7 @@
 }
 
 .nav__saved-articles-btn:hover {
-  opacity: 100%;
+  opacity: 0.5;
 }
 
 .nav__logout {
@@ -149,6 +147,7 @@
   }
   .nav__link-home--light {
     border-bottom: none;
+    padding-left: 15px;
   }
 
   .nav__saved-articles-btn {
