@@ -83,6 +83,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   currentUser={currentUser}
                   isHomePage={isHomePage}
+                  handleLogout={handleLogout}
                 />
 
                 <Routes>
