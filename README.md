@@ -10,7 +10,6 @@ A responsive, modular React application that allows users to search for news art
 - Responsive design
 - Modular components for cards, modals, forms, and layout
 
-
 ## Technologies Used
 
 | Technology       | Purpose                                        |
@@ -29,11 +28,17 @@ Authentication and saved articles are handled using Promises and local state. Th
 
 One of the biggest takeaways from this project was learning how to use React Context effectively. I had previously relied on prop drilling or lifting state for component communication, but this project helped me understand how Context can simplify state management across deeply nested components.
 
-I used Context to manage layout state, authentication flows, and conditional rendering logic. It allowed me to centralize shared state in a clean, scalable way without cluttering component hierarchies. I also explored provider patterns and custom hooks to keep the architecture modular and maintainable; however this is something I want to continue working on in future projects so I can gain more comfortability with this concept. 
+I used Context to manage layout state, authentication flows, and conditional rendering logic. It allowed me to centralize shared state in a clean, scalable way without cluttering component hierarchies. I also explored provider patterns and custom hooks to keep the architecture modular and maintainable; however this is something I want to continue working on in future projects so I can gain more comfortability with this concept.
 
 This experience gave me a deeper appreciation for architectural consistency and helped me think more critically about when and how to use Context versus other state management strategies.
 
-## Project Link 
+## Application Photos
+
+![Homepage](./src/assets/Homepage.png)
+![Saved Articles Page](./src/assets/SavedArticles.png)
+![Search Results](./src/assets/SearchResults.png)
+
+## Project Link
 
 https://adelapaz33.github.io/news-explorer-frontend
 
