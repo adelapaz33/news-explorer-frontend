@@ -26,6 +26,10 @@
   display: none;
 }
 
+.header__menu-btn-icon--close {
+  height: 24px;
+  width: 24px;
+}
 .header__overlay {
   position: fixed;
   top: 56px;

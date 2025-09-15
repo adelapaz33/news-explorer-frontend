@@ -5,6 +5,7 @@ import menuIcon from "../../assets/menu.svg";
 import menuIconDark from "../../assets/menuDark.svg";
 import { useState } from "react";
 import { useHeaderStyle } from "../../Context/HeaderStyleContext";
+import menuClose from "../../assets/close-btn.svg";
 
 function Header({
   setActiveModal,
@@ -26,20 +27,26 @@ function Header({
     setIsMobileMenuOpen(false);
   };
 
+  const isLightTheme = isMobileMenuOpen || isHomePage;
   return (
     <header className={headerClass}>
-      <Link className={`header__title ${isHomePage ? "header__title--light" : "header__title--dark"}`}to="/">
+      <Link
+        className={`header__title ${isLightTheme ? "header__title--light" : "header__title--dark"}`}
+        to="/"
+      >
         NewsExplorer
       </Link>
-      {!isModalOpen && (
-        <button className="header__menu-btn" onClick={toggleMobileMenu}>
-          <img
-            className="header__menu-btn-icon"
-            src={isHomePage ? menuIcon : menuIconDark}
-            alt="Menu Drop Down Icon"
-          />
-        </button>
-      )}
+
+      <button className="header__menu-btn" onClick={toggleMobileMenu}>
+        <img
+          className={`header__menu-btn-icon ${isMobileMenuOpen ? "header__menu-btn-icon--close" : ""}`}
+          src={
+            isMobileMenuOpen ? menuClose : isHomePage ? menuIcon : menuIconDark
+          }
+          alt={isMobileMenuOpen ? "Close Menu Icon" : "Menu Drop Down Icon"}
+        />
+      </button>
+
       {isMobileMenuOpen && (
         <div className="header__overlay" onClick={closeMobileMenu}></div>
       )}
@@ -50,7 +57,6 @@ function Header({
         isMobileMenuOpen={isMobileMenuOpen}
         closeMobileMenu={closeMobileMenu}
         handleLogout={handleLogout}
-    
       />
     </header>
   );
