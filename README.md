@@ -36,3 +36,7 @@ This experience gave me a deeper appreciation for architectural consistency and 
 ## Project Link 
 
 https://adelapaz33.github.io/news-explorer-frontend
+
+## Demo link
+
+https://youtu.be/VmOKO9zMpRk?si=tuA8ntk_V5EToUvb
