@@ -32,6 +32,9 @@ I used Context to manage layout state, authentication flows, and conditional ren
 
 This experience gave me a deeper appreciation for architectural consistency and helped me think more critically about when and how to use Context versus other state management strategies.
 
+## Future Improvements 
+A development for this website would be to add news videos along with the articles. 
+
 ## Application Photos
 
 ![Homepage](./src/assets/Homepage.png)
